@@ -1,21 +1,39 @@
 // Write your JavaScript code here.
 // Remember to pay attention to page loading!
-// window.addEventListener("load", function() {
-//      // put DOM code here to ensure elements have been loaded
-//     console.log('window loaded');
-//     const takeOff = document.getElementById ("takeoff");
-//     let flightStatus = document.querySelector("#flightStatus");
-//     console.log(takeOff);
-//     takeOff.addEventListener('click', event => {window.confirm("Confirm that the shuttle is ready for takeoff.");
-//     flightStatus.innerHTML = "<p>Shuttle in flight.</p>";
-// })
-// })
+
 window.addEventListener("load", function() {
-console.log('window loaded');
+    console.log('window loaded');
     const takeOff = document.getElementById ("takeoff");
-    let flightStatus = document.querySelector("#flightStatus");
-    console.log(takeOff);
-    takeOff.addEventListener('click', event => {window.confirm("Confirm that the shuttle is ready for takeoff.");
-    flightStatus.innerHTML = "<p>Shuttle in flight.</p>";
-})
+    const flightStatus = document.getElementById("flightStatus");
+    const flightScreen = document.getElementById("shuttleBackground");
+    const shuttleHeight = document.getElementById("spaceShuttleHeight");
+    const land = document.getElementById("landing");
+    const abort = document.getElementById("missionAbort");
+
+
+    takeOff.addEventListener('click', event => {
+        window.confirm("Confirm that the shuttle is ready for takeoff.");
+        flightStatus.innerHTML = "Shuttle in flight.";
+        flightScreen.style.backgroundColor = "blue";
+        shuttleHeight.innerHTML = "10,000";
+    });
+
+    land.addEventListener('click', event => {
+        window.confirm("The shuttle is landing. Landing gear engaged.");
+        flightStatus.innerHTML = "The shuttle has landed.";
+        flightScreen.style.backgroundColor = "green";
+        shuttleHeight.innerHTML = 0;
+    });
+
+    abort.addEventListener("click", event => {
+        let response = window.confirm("Confirm that you want to abort the mission.");
+        if (response) {
+            flightStatus.innerHTML = "Mission aborted.";
+            flightScreen.style.backgroundColor = "green";
+            shuttleHeight.innerHTML = 0;
+        }
+    });
+
+
+
 })
