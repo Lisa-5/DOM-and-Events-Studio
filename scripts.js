@@ -4,13 +4,24 @@
 window.addEventListener("load", function() {
     console.log('window loaded');
     const takeOff = document.getElementById ("takeoff");
-    const flightStatus = document.getElementById("flightStatus");
-    const flightScreen = document.getElementById("shuttleBackground");
-    const shuttleHeight = document.getElementById("spaceShuttleHeight");
     const land = document.getElementById("landing");
     const abort = document.getElementById("missionAbort");
 
+    const flightStatus = document.getElementById("flightStatus");
+    const flightScreen = document.getElementById("shuttleBackground");
+    const shuttleHeight = document.getElementById("spaceShuttleHeight");
 
+    const up = document.getElementById('up');
+    const down = document.getElementById('down');
+    const left = document.getElementById('left');
+    const right = document.getElementById("right");
+    
+    // const rocket = document.getElementById("rocket");
+    // rocket.style.position = "absolute";
+    // rocket.style.left = 0;
+    // rocket.style.bottom = 0;
+    // console.log(rocket);
+    
     takeOff.addEventListener('click', event => {
         window.confirm("Confirm that the shuttle is ready for takeoff.");
         flightStatus.innerHTML = "Shuttle in flight.";
@@ -34,6 +45,17 @@ window.addEventListener("load", function() {
         }
     });
 
-
+    right.addEventListener("click", event => {
+        rocket.style.left = "10px";
+    });
+    left.addEventListener("click", event => {
+        rocket.style.left = "-10px";
+    });
+    up.addEventListener("click", event => {
+        rocket.style.bottom = "10px";
+    });
+    down.addEventListener("click", event => {
+        rocket.style.bottom = "-10px";
+    });
 
 })
