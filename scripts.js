@@ -20,8 +20,9 @@ window.addEventListener("load", function() {
     rocket.style.position = "absolute";
     rocket.style.left = 0;
     rocket.style.bottom = 0;
-    console.log(rocket);
-    
+    console.log(typeof rocket.style.left);
+
+
     takeOff.addEventListener('click', event => {
         window.confirm("Confirm that the shuttle is ready for takeoff.");
         flightStatus.innerHTML = "Shuttle in flight.";
@@ -46,16 +47,16 @@ window.addEventListener("load", function() {
     });
 
     right.addEventListener("click", event => {
-        rocket.style.left = "10px";
+        rocket.style.left = parseInt(rocket.style.left) +10 + "px";
     });
     left.addEventListener("click", event => {
-        rocket.style.left = "-10px";
+        rocket.style.left = parseInt(rocket.style.left) - 10 + "px";
     });
     up.addEventListener("click", event => {
-        rocket.style.bottom = "10px";
+        rocket.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
     });
     down.addEventListener("click", event => {
-        rocket.style.bottom = "-10px";
+        rocket.style.bottom = parseInt(rocket.style.bottom) -10 + "px";
     });
 
 })
