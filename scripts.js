@@ -16,11 +16,11 @@ window.addEventListener("load", function() {
     const left = document.getElementById('left');
     const right = document.getElementById("right");
     
-    // const rocket = document.getElementById("rocket");
-    // rocket.style.position = "absolute";
-    // rocket.style.left = 0;
-    // rocket.style.bottom = 0;
-    // console.log(rocket);
+    const rocket = document.getElementById("rocket");
+    rocket.style.position = "absolute";
+    rocket.style.left = 0;
+    rocket.style.bottom = 0;
+    console.log(rocket);
     
     takeOff.addEventListener('click', event => {
         window.confirm("Confirm that the shuttle is ready for takeoff.");
