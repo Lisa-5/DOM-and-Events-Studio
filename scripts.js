@@ -20,8 +20,6 @@ window.addEventListener("load", function() {
     rocket.style.position = "absolute";
     rocket.style.left = 0;
     rocket.style.bottom = 0;
-    console.log(typeof rocket.style.left);
-
 
     takeOff.addEventListener('click', event => {
         window.confirm("Confirm that the shuttle is ready for takeoff.");
@@ -35,6 +33,8 @@ window.addEventListener("load", function() {
         flightStatus.innerHTML = "The shuttle has landed.";
         flightScreen.style.backgroundColor = "green";
         shuttleHeight.innerHTML = 0;
+        rocket.style.left = 0;
+        rocket.style.bottom = 0;
     });
 
     abort.addEventListener("click", event => {
@@ -43,6 +43,8 @@ window.addEventListener("load", function() {
             flightStatus.innerHTML = "Mission aborted.";
             flightScreen.style.backgroundColor = "green";
             shuttleHeight.innerHTML = 0;
+            rocket.style.left = 0;
+            rocket.style.bottom = 0;
         }
     });
 
