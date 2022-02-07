@@ -49,16 +49,38 @@ window.addEventListener("load", function() {
     });
 
     right.addEventListener("click", event => {
-        rocket.style.left = parseInt(rocket.style.left) +10 + "px";
+        //rocket.style.left = parseInt(rocket.style.left) +10 + "px";
+        
+        if (parseInt(rocket.style.left) >= 600) {
+            rocket.style.left = "600px";
+        } else {
+            rocket.style.left = parseInt(rocket.style.left) +10 + "px";
+        }
+        console.log(rocket.style.left);
     });
+
     left.addEventListener("click", event => {
-        rocket.style.left = parseInt(rocket.style.left) - 10 + "px";
+        if (parseInt(rocket.style.left) <= -10) {
+            rocket.style.left = "-10px";
+        } else {
+            rocket.style.left = parseInt(rocket.style.left) -10 + "px";
+        }
     });
+
     up.addEventListener("click", event => {
-        rocket.style.bottom = parseInt(rocket.style.bottom) + 10 + "px";
+        if (parseInt(rocket.style.bottom) >= 250) {
+            rocket.style.bottom = "250px";
+        } else {
+            rocket.style.bottom = parseInt(rocket.style.bottom) +10 + "px";
+        }
     });
+
     down.addEventListener("click", event => {
-        rocket.style.bottom = parseInt(rocket.style.bottom) -10 + "px";
+        if (parseInt(rocket.style.bottom) <= 0) {
+            rocket.style.bottom = "0px";
+        } else {
+            rocket.style.bottom = parseInt(rocket.style.bottom) -10 + "px";
+        }
     });
 
 })
