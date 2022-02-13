@@ -56,7 +56,8 @@ window.addEventListener("load", function() {
         } else {
             rocket.style.left = parseInt(rocket.style.left) +10 + "px";
         }
-        console.log(rocket.style.left);
+        //console.log(rocket.style.left);
+        
     });
 
     left.addEventListener("click", event => {
@@ -73,6 +74,7 @@ window.addEventListener("load", function() {
         } else {
             rocket.style.bottom = parseInt(rocket.style.bottom) +10 + "px";
         }
+        shuttleHeight.innerHTML = Number(shuttleHeight.innerHTML) + 10000;
     });
 
     down.addEventListener("click", event => {
@@ -81,6 +83,7 @@ window.addEventListener("load", function() {
         } else {
             rocket.style.bottom = parseInt(rocket.style.bottom) -10 + "px";
         }
+        shuttleHeight.innerHTML = Number(shuttleHeight.innerHTML) - 10000;
     });
 
 })
