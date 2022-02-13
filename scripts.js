@@ -56,7 +56,6 @@ window.addEventListener("load", function() {
         } else {
             rocket.style.left = parseInt(rocket.style.left) +10 + "px";
         }
-        //console.log(rocket.style.left);
         
     });
 
